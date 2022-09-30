@@ -45,7 +45,7 @@ public class PostingsSolrHighlighter extends UnifiedSolrHighlighter {
   }
 
   @Override
-  protected UnifiedHighlighter getHighlighter(SolrQueryRequest req) {
+  protected SolrExtendedUnifiedHighlighter getHighlighter(SolrQueryRequest req) {
     // Adjust the highlight parameters to match what the old PostingsHighlighter had.
     ModifiableSolrParams invariants = new ModifiableSolrParams();
     invariants.set(HighlightParams.OFFSET_SOURCE, "POSTINGS");
