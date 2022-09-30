@@ -27,3 +27,5 @@ pom.xml
 /nb-build
 .pydevproject
 __pycache__
+.DS_Store
+!solr/contrib/lib

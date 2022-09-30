@@ -110,3 +110,20 @@ contributing.
 - [Lucene Issue Tracker](https://issues.apache.org/jira/browse/LUCENE)
 - [Solr Issue Tracker](https://issues.apache.org/jira/browse/SOLR)
 - IRC: `#solr` and `#solr-dev` on freenode.net
+
+## Europeana-specific
+This section contains build and installation steps specific to Europeana.
+
+### Creating a distribution
+To create a distribution for installing Solr on a server:
+
+- ensure that the "package" Ant task invokes "package-local-src-tgz" instead of "package-src-tgz" ([see this commit](https://github.com/europeana/solr-ft-patched/commit/430d18f44c116f65c6b5621e32ef7cd53fbef040#diff-4f449c3f0169a925860c303dd176bb4e44a62a02bb53999dfea92a6f92c14b87R430));
+- if required, change the values for `version.base` and `version.suffix` in the `version.properties` file;
+- navigate to the `solr/` directory and then run `ant package`
+
+Distribution artifacts will be created in the `solr/package` directory.
+
+### Installing the patched distribution
+A Solr installation script is included in the distribution artifacts. This is the recommended way to install Solr on a server.
+
+The script is documented [here](https://solr.apache.org/guide/7_7/taking-solr-to-production.html#service-installation-script).
