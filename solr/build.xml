@@ -427,7 +427,7 @@
   <target name="prepare-release" depends="prepare-release-no-sign, sign-artifacts"/>
  
   <!-- make a distribution -->
-  <target name="package" depends="package-src-tgz,create-package,documentation,-dist-changes"/>
+  <target name="package" depends="package-local-src-tgz,create-package,documentation,-dist-changes"/>
 
   <!-- copy changes/ to the release folder -->
   <target name="-dist-changes">
